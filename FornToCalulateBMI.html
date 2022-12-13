@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+    <head>
+        <title>Form</title>
+    </head>
+    <body>
+      <div>
+            <label>Name:</label>
+            <input type="text">
+            <br>
+            <label>Sex</label>
+            <select>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <br>
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight"> <span>lbs</span>
+            <br>
+            <label for="height">Height:</label>
+            <input type="number" id="height"> <span>feet</span>
+            <br>
+            <button onclick="calulate()">Calulate</button>
+            <button onclick="reload()">Reset</button>
+            <br>
+           <label id="result"></label>
+        </div>  
+       
+        <script type="text/javascript">
+            
+                    function calulate(){
+                        const form = document.getElementById('form')
+                        let weight =document.getElementById('weight').value;
+                        let height =document.getElementById('height').value;
+                        let bmi= (weight/(height*height)*703);   
+                                       
+                        if(bmi>=25 && bmi<=39.99){
+                            document.getElementById('result').innerHTML= 'Your BMI is '+bmi + ' So you are overwight'
+                        }
+                       
+                        else{
+                            document.getElementById('result').innerHTML= 'Your BMI is '+bmi + ' So you are obese'
+                        }
+
+                    }
+                    function reload(){
+                            window.location.reload()
+                        }
+        </script>
+    </body>
+</html>
